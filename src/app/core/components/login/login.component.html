@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <div class="form-login">
+    <form [formGroup]="formGroup" (ngSubmit)="login()">
+      <div class="form-login__content">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password">
+          <mat-icon matSuffix>visibility</mat-icon>
+        </mat-form-field>
+
+      </div>
+      <div class="form-login__action">
+        <button mat-stroked-button color="primary" [disabled]="formGroup.invalid || formGroup.pristine">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
